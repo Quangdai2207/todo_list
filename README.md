@@ -35,18 +35,29 @@
 ## Tai lieu huong dan
 
 > [!NOTE]
-> LUU Y:
+> **LUU Y:**
 > Todo-list la ung dung mini voi cac chuc nang CRUD co ban duoc build tren Spring Framework Java. Moi du lieu tren ung
 > dung duoc luu trong bo nho Ram cua may tinh, khong su dung bat ky ket noi co so du lieu nao nhu MySql, Postgres...vv
 >
 > Vi ung dung khong su dung co so du lieu de luu tru du lieu trong qua trinh test ung dung nen khi khi ung dung tat hoac
 > khoi dong lai thi toan bo du lieu test truoc do se khong con luu trong bo nho Ram.
+>
+> Package Repositories la noi khoi tao du lieu ban dau cho toan bo dung dung Todo-list
 
 - #### Cau truc du an gom co:
-- [Controllers](./src/main/java/intern/todolist/controllers)
-- [Entities](./src/main/java/intern/todolist/entities)
-- [Repositories](./src/main/java/intern/todolist/repositories)
-- [Services](./src/main/java/intern/todolist/services)
+
+| Packages                                                       | Explains                                    |
+|----------------------------------------------------------------|---------------------------------------------|
+| [Controllers](./src/main/java/intern/todolist/controllers)     | Bo dieu khien request tu nguoi dung         |
+| [Entities](./src/main/java/intern/todolist/entities)           | package chua lop doi tuong Job              |
+| [Repositories](./src/main/java/intern/todolist/repositories)   | package chua du lieu va truy van du lieu    |
+| [Services](./src/main/java/intern/todolist/services)           | package xu ly logic du lieu cho controller  |
+| [Resources](./src/main/resources)                              | package chua tai nguyen va file html, css   |
+
+
+
+
+
 
 
 
