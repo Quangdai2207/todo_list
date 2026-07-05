@@ -22,6 +22,7 @@
     
     # Lua chon 1 trong 2 cau lenh sau de trinh chay ung dung todo-list 
     $ docker run --name todo-list -p 3000:3000 daitran9999/todo-list-app:v1.0.0
+  
     $ docker compose up -d
     ````
 
