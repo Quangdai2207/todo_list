@@ -4,9 +4,9 @@
     - Truy cap truc tiep lien ket: `https://todo-list-st8q.onrender.com/`
     - Truy cap truc tiep bang command line: `open -a "google chrome" https://todo-list-st8q.onrender.com/`
 
-  > [!IMPORTANT]
-  > Khi lan dau tien trinh chay, ung dung co the thuc hien tien trinh build. Sau khi hoan tat trinh duyet tu dong
-  > dieu huong ve trang chu `/` cua ung dung.
+> [!IMPORTANT]
+> Khi lan dau tien trinh chay, ung dung co the thuc hien tien trinh build. Sau khi hoan tat trinh duyet tu dong
+> dieu huong ve trang chu `/` cua ung dung.
 
 - ### Chay ung dung bang Docker
     - Yeu cau thiet bi co Docker Desktop cho Linux/MacOS/Windows
