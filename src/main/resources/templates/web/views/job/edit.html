@@ -63,9 +63,15 @@
             </button>
 
         </div>
-
     </form>
-
+    <div style="text-align: center; margin-top: 20px">
+        <div th:if="${msg}" style="color: #cc4c4c; padding: 10px; background-color: rgba(162,17,17,0.25);border:1px; border-radius: 10px">
+            <span th:text="${msg}"></span>
+        </div>
+        <div th:unless="${msg}">
+            <span th:text="${msg}"></span>
+        </div>
+    </div>
 </div>
 
 </body>

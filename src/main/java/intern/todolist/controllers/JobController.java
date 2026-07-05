@@ -43,11 +43,11 @@ public class JobController {
     public String edit(@ModelAttribute Job job, ModelMap model) {
         if (!job.getTitle().matches("^[a-zA-Z0-9 ]+$")) {
             model.put("msg", "Tieu de khong nen chua ky tu dac biet.");
-            return "web/views/job/add";
+            return "web/views/job/edit";
         }
         if (job.getEndDate().isBefore(job.getStartDate())) {
             model.put("msg", "Ngay ket thuc phai lon hon hoac bang ngay bat dau");
-            return "web/views/job/add";
+            return "web/views/job/edit";
         }
         jobService.update(job);
         return "redirect:/job";
