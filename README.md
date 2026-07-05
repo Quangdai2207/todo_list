@@ -13,19 +13,19 @@
     - Co the tai va cai dat Docker Desktop theo huong dan **[Tai Day](https://www.docker.com/products/docker-desktop/)**
     - Sau khi cai dat thanh cong, thuc hien cac buoc sau de chay ung dung bang Docker Desktop theo cac buoc:
 
-    ````bash
-    # Tao moi thu nuc
-    $ mkdir -p todo-list && cd todo-list
-    
-    # Sao chep reo todo-list
-    $ git clone https://github.com/quangdai2207/todo_list .
-    
-    # Trinh chay ung dung bang Compose file
-    $ docker compose up -d
-  
-    # Stop ug dung
-    $ docker compose down -v
-    ````
+        ````bash
+        # Tao moi thu nuc
+        $ mkdir -p todo-list && cd todo-list
+        
+        # Sao chep reo todo-list
+        $ git clone https://github.com/quangdai2207/todo_list .
+        
+        # Trinh chay ung dung bang Compose file
+        $ docker compose up -d
+      
+        # Stop ug dung
+        $ docker compose down -v
+        ````
 
   Sau khi thuc hien lenh trinh chay ung dung bang Docker, truy cap vao lien ket de test ung sung
   > 🌏 http://localhost:3000
