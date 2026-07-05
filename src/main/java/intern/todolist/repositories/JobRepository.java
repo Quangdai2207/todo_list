@@ -12,49 +12,47 @@ import java.util.List;
 public class JobRepository {
     private List<Job> jobs = new ArrayList<>();
 
-    // Todo-list: Seeding data on Ram machine
+    // Todo-list: Khoi tao du lieu ban dau cho toan bo ung dung Todo-list
     public JobRepository() {
-        jobs = new ArrayList<>(List.of(
-                new Job(1, "Reading", "Reading 10 pages on a book per day", null, null, false, LocalDateTime.now(), null, false),
-                new Job(2, "Apply CV", "2 CV per day", null, null, false, LocalDateTime.now(), null, false),
-                new Job(3, "Learn skill", "Understanding one skill per day", null, null, false, LocalDateTime.now(), null, false)
-        ));
+        jobs = new ArrayList<>(
+                List.of(
+                        new Job(1, "Reading", "Reading 10 pages on a book per day", null, null, false, LocalDateTime.now(), null, false),
+                        new Job(2, "Apply CV", "2 CV per day", null, null, false, LocalDateTime.now(), null, false),
+                        new Job(3, "Learn skill", "Understanding one skill per day", null, null, false, LocalDateTime.now(), null, false)));
     }
 
+    // Todo-list: Lay tong so records tao Id tang dan co Job moi
     public int total() {
         return jobs.size();
     }
 
-    // Get list todo-list
+    // Todo-list: Lay danh sach viec can lam
     public List<Job> getJobs() {
-        return jobs.stream()
-                .filter(j -> !j.isDeleted())
-                .sorted(Comparator.comparing(Job::getCreatedAt).reversed())
-                .toList();
+        return jobs.stream().filter(j -> !j.isDeleted()).sorted(Comparator.comparing(Job::getCreatedAt).reversed()).toList();
     }
 
-    // todo-list get by ID
+    // Todo-list: Lay Job Id
     public Job getJobById(int id) {
         return jobs.stream().filter(j -> j.getId() == id).findFirst().orElse(null);
     }
 
-    // todo-list checkin exist
+    // Todo-list: Kiem tra Job da ton tai chua
     public boolean isExist(Job job) {
         return jobs.stream().anyMatch(j -> !j.isDeleted() && j.getTitle().equalsIgnoreCase(job.getTitle()));
     }
 
-    // todo-list get by name/title
+    // Todo-list Lay Job bang title
     public Job getJobByName(String title) {
         return jobs.stream().filter(j -> j.getTitle().equals(title)).findFirst().orElse(null);
     }
 
-    // todo-list save a new job
+    // Todo-list: Them Job moi
     public int save(Job job) {
         jobs.add(job);
         return 0;
     }
 
-    // todo-list save updated job into todo-list
+    // Todo-list luu Job Cap nhat
     public boolean saveUpdate(Job jobUpdated) {
         for (int i = 0; i < jobs.size(); i++) {
             if (jobs.get(i).getId() == (jobUpdated.getId())) {
@@ -65,7 +63,7 @@ public class JobRepository {
         return false;
     }
 
-    // todo-list remove jon
+    // todo-list: Xoa Job
     public boolean remove(int id) {
         try {
             jobs.removeIf(j -> j.getId() == id);

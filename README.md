@@ -28,7 +28,7 @@
         $ docker compose down -v
         ````
 
-  Sau khi thuc hien lenh trinh chay ung dung bang Docker, truy cap vao lien ket de test ung sung
+  Sau khi thuc hien lenh trinh chay ung dung bang Docker, truy cap vao lien ket de test ung dung
   > 🌏 http://localhost:3000
 
 ---
@@ -55,10 +55,6 @@
 | [Repositories](./src/main/java/intern/todolist/repositories) | package chua du lieu va truy van du lieu   |
 | [Services](./src/main/java/intern/todolist/services)         | package xu ly logic du lieu cho controller |
 | [Resources](./src/main/resources)                            | package chua tai nguyen va file html, css  |
-
-
-
-
 
 
 
