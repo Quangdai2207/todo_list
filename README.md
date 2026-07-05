@@ -1,12 +1,12 @@
 ## Huong dan truy cap ung dung
 
 - ### Truy cap truc tiep
-    - Truy cap truc tiep lien ket: `https://todo-list-st8q.onrender.com/`
+    - Truy cap ung dung bang lien ket: `https://todo-list-st8q.onrender.com/`
     - Truy cap truc tiep bang command line: `open -a "google chrome" https://todo-list-st8q.onrender.com/`
 
 > [!IMPORTANT]
-> Khi lan dau tien trinh chay, ung dung co the thuc hien tien trinh build. Sau khi hoan tat trinh duyet tu dong
-> dieu huong ve trang chu `/` cua ung dung.
+> Khi lan dau tien trinh chay tren `https://todo-list-st8q.onrender.com/`, ung dung co the thuc hien tien trinh build.
+> Sau khi hoan tat trinh duyet tu dong dieu huong ve trang chu `/` cua ung dung.
 
 - ### Chay ung dung bang Docker
     - Yeu cau thiet bi co Docker Desktop cho Linux/MacOS/Windows
@@ -14,6 +14,7 @@
     - Sau khi cai dat thanh cong, thuc hien cac buoc sau de chay ung dung bang Docker Desktop theo cac buoc:
 
         ````bash
+        # Dam bao Docker Engine da duoc khoi dong truoc khi thuc hien Docker command trinh chay ung dung Todo-list
         # Tao moi thu nuc
         $ mkdir -p todo-list && cd todo-list
         
@@ -54,6 +55,8 @@
 | [Repositories](./src/main/java/intern/todolist/repositories) | package chua du lieu va truy van du lieu   |
 | [Services](./src/main/java/intern/todolist/services)         | package xu ly logic du lieu cho controller |
 | [Resources](./src/main/resources)                            | package chua tai nguyen va file html, css  |
+
+
 
 
 
