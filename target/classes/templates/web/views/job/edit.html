@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Job</title>
+
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Edit Job</h1>
+
+    <form th:action="@{/job/edit}" th:object="${job}" method="post">
+
+        <!-- ID -->
+        <input type="hidden" th:field="*{id}">
+
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" th:field="*{title}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea th:field="*{description}" rows="4"></textarea>
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Start Date</label>
+                <input type="date"
+                       name="startDate"
+                       th:value="${#temporals.format(job.startDate, 'yyyy-MM-dd')}" required>
+            </div>
+
+            <div class="form-group">
+                <label>End Date</label>
+                <input type="date"
+                       name="endDate"
+                       th:value="${#temporals.format(job.endDate, 'yyyy-MM-dd')}" required>
+            </div>
+
+        </div>
+
+        <div class="form-group checkbox">
+            <label>
+                <input type="checkbox" th:field="*{status}">
+                Completed
+            </label>
+        </div>
+
+        <div class="button-group">
+
+            <a th:href="@{/job}" class="btn btn-secondary">
+                Cancel
+            </a>
+
+            <button type="submit" class="btn btn-primary">
+                Save Changes
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
