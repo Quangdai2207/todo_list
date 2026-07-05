@@ -1,0 +1,20 @@
+services:
+
+  # Jenkins Service
+  jenkins:
+    image: my-jenkins-daitran:v1.1.0
+    restart: on-failure
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+
+  # Docker Cloud Service with Socat
+  docker_proxy:
+    container_name: docker_proxy
+    image: alpine/socat
+    restart: always
+    ports:
+      - "127.0.0.1:2376:2375"
+
+networks:
+  jenkins:

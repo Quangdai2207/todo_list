@@ -1,0 +1,14 @@
+x-args: &args
+  args:
+    BUILD_NUMBER: ${BUILD_NUMBER:-0}
+    BUILD_TAG: ${BUILD_TAG:-local}
+
+services:
+  todo-list:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      <<: *args
+
+networks:
+  app-net:

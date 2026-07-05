@@ -1,4 +1,4 @@
-## Build Maven and load dependencies
+## Todo-list: Build Maven and load dependencies
 FROM maven:latest AS build
 WORKDIR /build
 COPY pom.xml .
@@ -7,12 +7,20 @@ RUN mvn -B dependency:go-offline
 COPY . .
 RUN mvn package
 
-## Load openJDK & runtimes
+## Todo-list: Load openJDK & runtimes
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 ## Copy jar for app runtime
 COPY --from=build /build/target/todo_list-0.0.1-SNAPSHOT.jar .
+
+# Define environment variables while build image
+ARG BUILD_NUMBER=0
+ARG BUILD_TAG=local
+
+LABEL app_version="1"
+LABEL build_tag=${BUILD_TAG}
+LABEL build_number=${BUILD_NUMBER}
 
 ## PORT define
 EXPOSE 3000

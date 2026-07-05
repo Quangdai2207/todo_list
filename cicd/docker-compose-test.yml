@@ -1,0 +1,10 @@
+services:
+
+  # Map Port
+  todo-list:
+    ports:
+      - "3000:3000"
+
+## NETWORK
+networks:
+  app-net:
