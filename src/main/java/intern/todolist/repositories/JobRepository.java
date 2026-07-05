@@ -12,7 +12,7 @@ import java.util.List;
 public class JobRepository {
     private List<Job> jobs = new ArrayList<>();
 
-    // Seeding data on Ram machine
+    // Todo-list: Seeding data on Ram machine
     public JobRepository() {
         jobs = new ArrayList<>(List.of(
                 new Job(1, "Reading", "Reading 10 pages on a book per day", null, null, false, LocalDateTime.now(), null, false),

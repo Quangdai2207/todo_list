@@ -36,8 +36,9 @@
 
 > [!NOTE]
 > **LUU Y:**
-> Todo-list la ung dung mini voi cac chuc nang CRUD co ban duoc build tren Spring Framework Java. Moi du lieu tren ung
-> dung duoc luu trong bo nho Ram cua may tinh, khong su dung bat ky ket noi co so du lieu nao nhu MySql, Postgres...vv
+> Todo-list la ung dung mini voi cac chuc nang CRUD theo mo hinh Web MVC co ban, duoc build tren Spring Framework Java.
+> Moi du lieu tren ung dung duoc luu trong bo nho Ram cua may tinh, khong su dung bat ky ket noi co so du lieu nao nhu
+> MySql, Postgres...vv
 >
 > Vi ung dung khong su dung co so du lieu de luu tru du lieu trong qua trinh test ung dung nen khi khi ung dung tat hoac
 > khoi dong lai thi toan bo du lieu test truoc do se khong con luu trong bo nho Ram.
@@ -46,13 +47,13 @@
 
 - #### Cau truc du an gom co:
 
-| Packages                                                       | Explains                                    |
-|----------------------------------------------------------------|---------------------------------------------|
-| [Controllers](./src/main/java/intern/todolist/controllers)     | Bo dieu khien request tu nguoi dung         |
-| [Entities](./src/main/java/intern/todolist/entities)           | package chua lop doi tuong Job              |
-| [Repositories](./src/main/java/intern/todolist/repositories)   | package chua du lieu va truy van du lieu    |
-| [Services](./src/main/java/intern/todolist/services)           | package xu ly logic du lieu cho controller  |
-| [Resources](./src/main/resources)                              | package chua tai nguyen va file html, css   |
+| **Packages**                                                 | **Explains**                               |
+|--------------------------------------------------------------|--------------------------------------------|
+| [Controllers](./src/main/java/intern/todolist/controllers)   | Bo dieu khien request tu nguoi dung        |
+| [Entities](./src/main/java/intern/todolist/entities)         | package chua lop doi tuong Job             |
+| [Repositories](./src/main/java/intern/todolist/repositories) | package chua du lieu va truy van du lieu   |
+| [Services](./src/main/java/intern/todolist/services)         | package xu ly logic du lieu cho controller |
+| [Resources](./src/main/resources)                            | package chua tai nguyen va file html, css  |
 
 
 

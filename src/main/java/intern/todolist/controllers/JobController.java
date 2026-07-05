@@ -16,7 +16,7 @@ import java.util.List;
 public class JobController {
     private final JobService jobService;
 
-
+    // Todo-list: Trang mac dinh cua Jobs todo-list, liet ke danh sach viec can lam
     @GetMapping({"/", ""})
     public String listTodo(ModelMap model) {
         List<Job> jobs = jobService.findAll().stream().toList();
@@ -24,6 +24,7 @@ public class JobController {
         return "web/views/job/list";
     }
 
+    //  Todo-list: Trang xem noi dung chi tiet cua viec can lam
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id) {
         System.out.println("Delete job with id: " + id);
@@ -32,6 +33,7 @@ public class JobController {
         return "redirect:/job";
     }
 
+    // Todo-list: Trang cap nhat thong tin viec can lam voi phuong thuc GET tra View cho nguoi dung
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable("id") int id, ModelMap model) {
         Job job = jobService.findById(id);
@@ -39,6 +41,7 @@ public class JobController {
         return "web/views/job/edit";
     }
 
+    // Todo-list: Trang cap nhat thong tin viec can lam voi phuong thuc POST
     @PostMapping("/edit")
     public String edit(@ModelAttribute Job job, ModelMap model) {
         if (!job.getTitle().matches("^[a-zA-Z0-9 ]+$")) {
@@ -53,12 +56,14 @@ public class JobController {
         return "redirect:/job";
     }
 
+    // Todo-list: Trang them viec can lam voi phuong thuc GET tra view cho nguoi dung
     @GetMapping("/add")
     public String add(ModelMap model) {
         model.put("job", new Job());
         return "web/views/job/add";
     }
 
+    // Todo-list: Trang them viec can lam voi phuong thuc POST cho phep nguoi dung them moi viec can lam
     @PostMapping("/add")
     public String add(@ModelAttribute Job job, ModelMap model) {
         int count = jobService.getTotal();
@@ -82,6 +87,7 @@ public class JobController {
         return "redirect:/job";
     }
 
+    // Todo-list: Chuc nang search tim kiem tieu de viec can lam
     @GetMapping("/search")
     public String search(@PathParam("keyword") String keyword, ModelMap model) {
         if (keyword.equals("")) {
@@ -99,6 +105,7 @@ public class JobController {
         return "web/views/job/list";
     }
 
+    // Todo-list: Chuc nang filter trang thai viec can lam Completed/Process tu nguoi dung
     @GetMapping("/filter")
     public String status(@PathParam("status")  String status, ModelMap model) {
         if (status.equals("")) {
