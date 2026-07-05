@@ -40,8 +40,15 @@ public class JobController {
     }
 
     @PostMapping("/edit")
-    public String edit(@ModelAttribute Job job) {
-        System.out.println("Edit job: " + job.toString());
+    public String edit(@ModelAttribute Job job, ModelMap model) {
+        if (!job.getTitle().matches("^[a-zA-Z0-9 ]+$")) {
+            model.put("msg", "Tieu de khong nen chua ky tu dac biet.");
+            return "web/views/job/add";
+        }
+        if (job.getEndDate().isBefore(job.getStartDate())) {
+            model.put("msg", "Ngay ket thuc phai lon hon hoac bang ngay bat dau");
+            return "web/views/job/add";
+        }
         jobService.update(job);
         return "redirect:/job";
     }
