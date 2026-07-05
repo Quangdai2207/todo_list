@@ -15,15 +15,16 @@
 
     ````bash
     # Tao moi thu nuc
-    $ mkdir -p todo-list
+    $ mkdir -p todo-list && cd todo-list
     
     # Sao chep reo todo-list
     $ git clone https://github.com/quangdai2207/todo_list .
     
-    # Lua chon 1 trong 2 cau lenh sau de trinh chay ung dung todo-list 
-    $ docker run --name todo-list -p 3000:3000 daitran9999/todo-list-app:v1.0.0
-  
+    # Trinh chay ung dung bang Compose file
     $ docker compose up -d
+  
+    # Stop ug dung
+    $ docker compose down -v
     ````
 
   Sau khi thuc hien lenh trinh chay ung dung bang Docker, truy cap vao lien ket de test ung sung
@@ -33,7 +34,19 @@
 
 ## Tai lieu huong dan
 
-Todo-list la ung dung mini voi cac chuc nang CRUD co ban duoc build tren Spring Framework Java. Moi du lieu tren ung
-dung duoc luu trong bo nho Ram cua may tinh, khong su dung bat ky ket noi co so du lieu nao nhu MySql, Postgres...vv
+> [!NOTE]
+> LUU Y:
+> Todo-list la ung dung mini voi cac chuc nang CRUD co ban duoc build tren Spring Framework Java. Moi du lieu tren ung
+> dung duoc luu trong bo nho Ram cua may tinh, khong su dung bat ky ket noi co so du lieu nao nhu MySql, Postgres...vv
+>
+> Vi ung dung khong su dung co so du lieu de luu tru du lieu trong qua trinh test ung dung nen khi khi ung dung tat hoac
+> khoi dong lai thi toan bo du lieu test truoc do se khong con luu trong bo nho Ram.
+
+- #### Cau truc du an gom co:
+- [Controllers](./src/main/java/intern/todolist/controllers)
+- [Entities](./src/main/java/intern/todolist/entities)
+- [Repositories](./src/main/java/intern/todolist/repositories)
+- [Services](./src/main/java/intern/todolist/services)
+
 
 
