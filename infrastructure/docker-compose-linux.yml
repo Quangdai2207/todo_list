@@ -5,6 +5,7 @@ services:
     container_name: jenkins-blueocean-linux
 
     environment:
+      # DNS "docker" la ten label trong cau hinh cloud Jenkin
       DOCKER_HOST: tcp://docker:2376
       DOCKER_CERT_PATH: /certs/client
       DOCKER_TLS_VERIFY: "1"
