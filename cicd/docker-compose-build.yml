@@ -10,4 +10,4 @@ services:
       <<: *args
 
 networks:
-  app-net:
+  jenkins:

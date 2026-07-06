@@ -15,6 +15,3 @@ services:
     restart: always
     ports:
       - "127.0.0.1:2376:2375"
-
-networks:
-  jenkins:
