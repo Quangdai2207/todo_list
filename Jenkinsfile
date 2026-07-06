@@ -10,6 +10,7 @@ pipeline {
 		stage('Verify') {
 			steps {
 				sh "ls -l"
+				echo $DOCKER_HOST
                 sh "chmod +x ./ci-commands/00_verify.sh"
                 sh "./ci-commands/00_verify.sh"
 			}
