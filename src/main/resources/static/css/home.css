@@ -89,3 +89,55 @@ p{
     color:#e2e8f0;
     font-weight:600;
 }
+
+
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .container{
+        width:100%;
+        padding:30px 22px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    p{
+        font-size:15px;
+    }
+
+    .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .author{
+        text-align:left;
+        font-size:14px;
+    }
+
+    .author p{
+        margin:10px 0;
+        word-break:break-word;
+    }
+
+    .author a{
+        word-break:break-all;
+    }
+
+    h6{
+        margin-top:30px;
+        font-size:12px;
+        color:#94a3b8;
+    }
+}

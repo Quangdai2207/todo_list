@@ -245,3 +245,83 @@ body{
     color:#94a3b8;
     font-size:15px;
 }
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    body{
+        padding:16px;
+    }
+
+    .container{
+        width:100%;
+        margin:20px auto;
+        padding:20px;
+    }
+
+    .top-bar{
+        display:block;
+    }
+
+    .top-bar h1{
+        text-align:center;
+        font-size:26px;
+        margin-bottom:24px;
+    }
+
+    .toolbar{
+        display:flex;
+        flex-direction:column;
+        gap:16px;
+        align-items:stretch;
+    }
+
+    .search-form,
+    .filter-form,
+    .action-buttons{
+        width:100%;
+    }
+
+    .search-form,
+    .filter-form{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search-form input,
+    .filter-form select,
+    .search-form button,
+    .filter-form button{
+        width:100%;
+    }
+
+    .action-buttons{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .action-buttons .btn{
+        width:100%;
+    }
+
+    .todo-table{
+        display:block;
+        width:100%;
+        overflow-x:auto;
+        white-space:nowrap;
+        margin-top:20px;
+    }
+
+    .todo-table th,
+    .todo-table td{
+        padding:12px;
+        font-size:14px;
+    }
+
+    .btn{
+        justify-content:center;
+    }
+}

@@ -123,3 +123,40 @@ a:hover{
 a:active{
     transform:scale(.97);
 }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    .container{
+        width:100%;
+        max-width:420px;
+        padding:36px 24px;
+    }
+
+    h1{
+        font-size:72px;
+        line-height:1;
+    }
+
+    h2{
+        font-size:24px;
+        margin-bottom:14px;
+    }
+
+    p{
+        font-size:15px;
+        line-height:1.7;
+        margin-bottom:28px;
+    }
+
+    a{
+        width:100%;
+        justify-content:center;
+        padding:14px 20px;
+    }
+}

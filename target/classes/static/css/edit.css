@@ -134,3 +134,49 @@ textarea{
 .btn-secondary:hover{
     background:#64748b;
 }
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    body{
+        padding:16px;
+    }
+
+    .container{
+        width:100%;
+        margin:20px auto;
+        padding:24px 20px;
+    }
+
+    h1{
+        font-size:24px;
+        margin-bottom:24px;
+    }
+
+    .form-row{
+        flex-direction:column;
+        gap:0;
+    }
+
+    .button-group{
+        flex-direction:column-reverse;
+    }
+
+    .button-group .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    input,
+    textarea{
+        font-size:16px;
+    }
+
+    .checkbox label{
+        display:flex;
+        align-items:center;
+        gap:8px;
+    }
+}
