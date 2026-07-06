@@ -2,6 +2,6 @@ services:
 
   ## SERVER
   todo-list:
-    image: ${REGISTRY:-docker.io}/daitran9999/todo-list-app-${BUILD_NUMBER:-local}
+    image: ${REGISTRY:-docker.io}/daitran9999/todo-list:v1.0.${BUILD_NUMBER:-0}
     networks:
       - app-net

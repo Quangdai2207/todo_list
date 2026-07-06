@@ -1,0 +1,1 @@
+docker compose -f ../cicd/docker-compose.yml -f ../cicd/docker-compose-build.yml --pull

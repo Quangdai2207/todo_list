@@ -16,10 +16,8 @@ COPY --from=build /build/target/todo_list-0.0.1-SNAPSHOT.jar .
 
 # Define environment variables while build image
 ARG BUILD_NUMBER=0
-ARG BUILD_TAG=local
 
 LABEL app_version="1"
-LABEL build_tag=${BUILD_TAG}
 LABEL build_number=${BUILD_NUMBER}
 
 ## PORT define
