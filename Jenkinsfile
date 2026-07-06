@@ -10,6 +10,7 @@ pipeline {
 		stage('Verify') {
 			steps {
 				dir('todo_list') {
+				    sh "ls -l"
 					sh "chmod +x ./ci-commands/00_verify.sh"
 					sh "./ci-commands/00_verify.sh"
 				}
