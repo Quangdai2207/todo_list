@@ -13,8 +13,6 @@
     <h1>Edit Job</h1>
 
     <form th:action="@{/job/edit}" th:object="${job}" method="post">
-
-        <!-- ID -->
         <input type="hidden" th:field="*{id}">
 
         <div class="form-group">
