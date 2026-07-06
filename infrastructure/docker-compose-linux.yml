@@ -14,6 +14,9 @@ services:
       - jenkins-data:/var/jenkins_home
       - jenkins-docker-certs:/certs/client:ro
 
+    networks:
+      - jenkins
+
   # Override Docker Cloud Service
   docker_proxy:
     command: >
@@ -22,6 +25,9 @@ services:
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+    networks:
+      - jenkins
 
 volumes:
   jenkins-data:
