@@ -60,7 +60,7 @@ body{
 .search-form input,
 .filter-form select{
     height:42px;
-    padding:0 14px;
+    padding:0 10px;
     border:1px solid #dcdcdc;
     border-radius:6px;
     font-size:15px;

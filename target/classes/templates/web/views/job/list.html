@@ -38,8 +38,8 @@
 
             <!-- Action Buttons -->
             <div class="action-buttons">
-                <a th:href="@{/}" class="btn btn-secondary">🏠 Home</a>
-                <a th:href="@{/job/add}" class="btn btn-primary">+ New Job</a>
+                <a th:href="@{/}" class="btn btn-secondary" style="padding: 18px 15px 18px 15px"/>← Home</a>
+                <a th:href="@{/job/add}" class="btn btn-primary" style="padding: 18px 15px 18px 15px">+ New Job</a>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
                 <th class="action-col">Actions</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody style="font-size: 14px">
             <tr th:if="${#lists.isEmpty(jobs)}">
                 <td colspan="7" class="empty">
                     <p>No jobs found.</p>
