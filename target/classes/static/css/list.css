@@ -260,6 +260,7 @@ body {
 .todo-table {
     width: 100%;
     min-width: 760px;
+    table-layout: fixed; /* khóa chiều rộng cột, nội dung dài không còn ép layout hay lấn cột khác */
     border-collapse: separate;
     border-spacing: 0;
 }
@@ -277,6 +278,16 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
+/* Chiều rộng cột cố định — chỉ cần khai báo ở th vì table-layout: fixed
+   sẽ áp dụng chung xuống toàn bộ cột phía dưới (td tương ứng) */
+.todo-table th:nth-child(1) { width: 64px; }   /* ID */
+.todo-table th:nth-child(2) { width: 15%; }    /* Title */
+.todo-table th:nth-child(3) { width: auto; }   /* Description - chiếm phần còn lại */
+.todo-table th:nth-child(4) { width: 108px; }  /* Start */
+.todo-table th:nth-child(5) { width: 108px; }  /* End */
+.todo-table th:nth-child(6) { width: 130px; }  /* Status */
+.todo-table th:nth-child(7) { width: 148px; }  /* Actions */
+
 .todo-table th:first-child { border-top-left-radius: var(--radius-sm); }
 .todo-table th:last-child { border-top-right-radius: var(--radius-sm); }
 
@@ -286,6 +297,7 @@ body {
     font-size: 0.9rem;
     color: var(--text-primary);
     vertical-align: middle;
+    overflow: hidden; /* nội dung dài không tràn ra khỏi ô, dù có từ liền không dấu cách */
 }
 
 .todo-table td:first-child,
@@ -298,7 +310,38 @@ body {
 
 .todo-table td:nth-child(3) {
     color: var(--text-secondary);
-    max-width: 320px;
+    position: relative;
+    line-height: 1.5;
+    max-height: 3em; /* ~2 dòng */
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    transition: max-height 0.25s ease;
+    cursor: default;
+}
+
+/* Dải mờ dần ở cuối gợi ý còn nội dung phía dưới */
+.todo-table td:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.4em;
+    background: linear-gradient(to bottom, transparent, var(--surface));
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+/* Hover cả hàng để xem toàn bộ mô tả, không cần trang chi tiết riêng */
+.todo-table tbody tr:hover td:nth-child(3) {
+    max-height: 220px;
+    overflow-y: auto;
+    background: var(--surface-hover);
+}
+
+.todo-table tbody tr:hover td:nth-child(3)::after {
+    opacity: 0;
 }
 
 .todo-table tbody tr {
@@ -604,6 +647,28 @@ body {
     .todo-table td:nth-child(4):before { content: "Start"; }
     .todo-table td:nth-child(5):before { content: "End"; }
     .todo-table td:nth-child(6):before { content: "Status"; }
+
+    /* Description hiện đầy đủ dạng đoạn văn, không cắt/hover như bản desktop
+       -> xem trọn nội dung job ngay trên card, khỏi cần trang chi tiết riêng */
+    .todo-table td:nth-child(3) {
+        display: block;
+        max-width: none;
+        max-height: none;
+        overflow: visible;
+        text-align: left;
+        padding: 12px 0 14px;
+        line-height: 1.55;
+        color: var(--text-secondary);
+    }
+
+    .todo-table td:nth-child(3)::before {
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .todo-table td:nth-child(3)::after {
+        display: none;
+    }
 
     .todo-table td[colspan="7"] {
         display: block;

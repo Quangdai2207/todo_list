@@ -52,6 +52,12 @@ public class JobController {
             model.put("msg", "Ngay ket thuc phai lon hon hoac bang ngay bat dau");
             return "web/views/job/edit";
         }
+
+        if (job.getDescription().length() > 166) {
+            model.put("msg", "Mo ta toi da 165 ky tu");
+            return "web/views/job/edit";
+        }
+
         jobService.update(job);
         return "redirect:/job";
     }
@@ -71,6 +77,11 @@ public class JobController {
 
         if (!job.getTitle().matches("^[a-zA-Z0-9 ]+$")) {
             model.put("msg", "Tieu de khong nen chua ky tu dac biet.");
+            return "web/views/job/add";
+        }
+
+        if (job.getDescription().length() > 166) {
+            model.put("msg", "Mo ta toi da 165 ky tu");
             return "web/views/job/add";
         }
 
@@ -107,7 +118,7 @@ public class JobController {
 
     // Todo-list: Chuc nang filter trang thai viec can lam Completed/Process tu nguoi dung
     @GetMapping("/filter")
-    public String status(@PathParam("status")  String status, ModelMap model) {
+    public String status(@PathParam("status") String status, ModelMap model) {
         if (status.equals("")) {
             model.put("jobs", jobService.findAll());
             return "web/views/job/list";
