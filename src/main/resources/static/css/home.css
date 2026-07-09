@@ -1,143 +1,292 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =====================================================
+   DESIGN TOKENS — đồng bộ 1:1 với list.css / edit.css
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #090d16;
+    --surface: #121826;
+    --surface-alt: #171f31;
+    --surface-hover: #1b2436;
+    --border: #232c40;
+    --border-soft: #1c2436;
+
+    --text-primary: #eef1f8;
+    --text-secondary: #8b93aa;
+    --text-muted: #5b6377;
+
+    --accent: #2dd4bf;
+    --accent-strong: #14b8a6;
+    --accent-soft: rgba(45, 212, 191, 0.14);
+    --accent-border: rgba(45, 212, 191, 0.4);
+
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --font-body: 'Inter', system-ui, -apple-system, Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
 }
 
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#0f172a;
-    color:#f8fafc;
-    font-family:Inter, Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
 }
 
-.container{
-    text-align:center;
-    background:#1e293b;
-    border:1px solid #334155;
-    padding:48px 64px;
-    border-radius:14px;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1{
-    margin-bottom:16px;
-    color:#f8fafc;
-    font-size:30px;
-    font-weight:700;
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: var(--bg);
+    background-image:
+            radial-gradient(circle at 12% 8%, rgba(45, 212, 191, 0.07), transparent 40%),
+            radial-gradient(circle at 88% 92%, rgba(45, 212, 191, 0.05), transparent 45%);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
 }
 
-p{
-    color:#94a3b8;
-    margin-bottom:32px;
-    line-height:1.6;
-    font-size:15px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:12px 22px;
-    background:#3b82f6;
-    color:#fff;
-    text-decoration:none;
-    border:none;
-    border-radius:10px;
-    font-size:14px;
-    font-weight:600;
-    transition:all .25s ease;
+.container {
+    position: relative;
     width: 100%;
+    max-width: 480px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 48px 44px 36px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
-.btn:hover{
-    background:#2563eb;
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
+.container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
-.btn:active{
-    transform:scale(.97);
+h1 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
 
-.author{
-    margin-top:40px;
-    padding-top:20px;
-    border-top:1px solid #334155;
-    text-align:left;
+/* Nhãn nhỏ phía trên tiêu đề, đồng bộ style "JOB / EDIT" bên edit.css */
+h1::before {
+    content: "TASK MANAGER";
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 14px;
 }
 
-.author h3{
-    margin-bottom:12px;
-    font-size:15px;
-    color:#f8fafc;
-    font-weight:600;
+p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-size: 0.92rem;
 }
 
-.author p{
-    margin:4px 0;
-    color:#94a3b8;
-    font-size:14px;
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 48px;
+    background: var(--accent);
+    color: #06231f;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
-.author strong{
-    display:inline-block;
-    width:70px;
-    color:#e2e8f0;
-    font-weight:600;
+.btn:hover {
+    background: var(--accent-strong);
+    box-shadow: 0 8px 20px rgba(45, 212, 191, 0.25);
+    transform: translateY(-2px);
 }
 
+.btn:active {
+    transform: scale(0.97);
+}
 
+.btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
 
+/* ================= AUTHOR / META BLOCKS ================= */
+.author {
+    margin-top: 32px;
+    padding: 18px 18px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    text-align: left;
+}
 
-/* ================= MOBILE ================= */
+.author + .author {
+    margin-top: 12px;
+}
 
-@media (max-width:768px){
+.author h3 {
+    margin-bottom: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
 
-    body{
-        padding:20px;
-        height:auto;
-        min-height:100vh;
+.author p {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0;
+    padding: 7px 0;
+    color: var(--text-primary);
+    font-size: 0.84rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.author p:last-child {
+    border-bottom: none;
+}
+
+.author strong {
+    flex-shrink: 0;
+    width: 76px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.author a {
+    color: var(--accent) !important;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s ease;
+}
+
+.author a:hover {
+    color: var(--accent-strong) !important;
+    text-decoration: underline;
+}
+
+h6 {
+    margin-top: 32px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+/* =====================================================
+   TABLET (≤ 1024px)
+   ===================================================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        max-width: 520px;
+        padding: 44px 40px 32px;
+    }
+}
+
+/* =====================================================
+   MOBILE (≤ 768px)
+   ===================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 24px 16px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        align-items: center;
     }
 
-    .container{
-        width:100%;
-        padding:30px 22px;
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 36px 24px 28px;
+        border-radius: var(--radius-md);
     }
 
-    h1{
-        font-size:28px;
+    h1 {
+        font-size: 1.4rem;
     }
 
-    p{
-        font-size:15px;
+    p {
+        font-size: 0.88rem;
+        margin-bottom: 26px;
     }
 
-    .btn{
-        width:100%;
-        justify-content:center;
+    .btn {
+        height: 50px;
+        font-size: 0.9rem;
     }
 
-    .author{
-        text-align:left;
-        font-size:14px;
+    .author {
+        margin-top: 14px;
+        padding: 16px 16px 12px;
     }
 
-    .author p{
-        margin:10px 0;
-        word-break:break-word;
+    .author p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        padding: 9px 0;
     }
 
-    .author a{
-        word-break:break-all;
+    .author strong {
+        width: auto;
     }
 
-    h6{
-        margin-top:30px;
-        font-size:12px;
-        color:#94a3b8;
+    .author a {
+        word-break: break-all;
+    }
+
+    h6 {
+        margin-top: 26px;
+        text-align: center;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 380px) {
+    .container {
+        padding: 30px 18px 24px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
     }
 }
