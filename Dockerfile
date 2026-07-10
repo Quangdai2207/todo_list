@@ -11,7 +11,7 @@ RUN mvn package
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-## Copy jar for app runtime
+## Copy jar for app runtime1
 COPY --from=build /build/target/todo_list-0.0.1-SNAPSHOT.jar .
 
 # Define environment variables while build image

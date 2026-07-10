@@ -1,6 +1,6 @@
 services:
   todo:
-    image: daitran9999/todo-list-app:v1.0.0
+    image: daitran9999/todo-list-app:v1.0.1
     ports:
       - "3000:3000"
 
