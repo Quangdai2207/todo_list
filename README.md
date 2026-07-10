@@ -5,8 +5,9 @@
     - Truy cap truc tiep bang command line: `open -a "google chrome" https://todo-list-st8q.onrender.com/`
 
 > [!IMPORTANT]
-> Khi lan dau tien trinh chay tren `https://todo-list-st8q.onrender.com/`, ung dung co the thuc hien tien trinh build.
-> Sau khi hoan tat trinh duyet tu dong dieu huong ve trang chu `/` cua ung dung.
+> Khi truy cap ung dung `https://todo-list-st8q.onrender.com/`, Render server co the thuc hien tien trinh wakeup (tu
+> 20s) neu lan dau truy cap hoac 15p neu khong tuong tac. Sau khi hoan tat trinh duyet tu dong dieu huong ve trang chu
+> `/` cua ung dung.
 
 - ### Chay ung dung bang Docker
     - Yeu cau thiet bi co Docker Desktop cho Linux/MacOS/Windows
@@ -55,6 +56,8 @@
 | [Repositories](./src/main/java/intern/todolist/repositories) | package chua du lieu va truy van du lieu   |
 | [Services](./src/main/java/intern/todolist/services)         | package xu ly logic du lieu cho controller |
 | [Resources](./src/main/resources)                            | package chua tai nguyen va file html, css  |
+
+
 
 
 
