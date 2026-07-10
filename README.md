@@ -32,6 +32,23 @@
   Sau khi thuc hien lenh trinh chay ung dung bang Docker, truy cap vao lien ket de test ung dung
   > 🌏 http://localhost:3000
 
+- ### Trinh chay tren host Local
+
+  ```bash
+  # init folder todo-list 
+  $ cd ~/desktop
+  $ mkdir -p todo-list && cd todo-list
+  
+  # Clone repo todo-list
+  $ git clone https://github.com/quangdai2207/todo_list .
+
+  # clean & build .jar
+  $ mvn clean packaage
+  
+  # App Lunching
+  $ java -jar ./target/todo_list-0.0.1-SNAPSHOT.jar
+  ```
+
 ---
 
 ## Tai lieu huong dan
@@ -56,11 +73,6 @@
 | [Repositories](./src/main/java/intern/todolist/repositories) | package chua du lieu va truy van du lieu   |
 | [Services](./src/main/java/intern/todolist/services)         | package xu ly logic du lieu cho controller |
 | [Resources](./src/main/resources)                            | package chua tai nguyen va file html, css  |
-
-
-
-
-
 
 
 
